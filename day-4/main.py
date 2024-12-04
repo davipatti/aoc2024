@@ -49,6 +49,8 @@ def part2(grid):
     row_mask = np.array([0, 0, 1, 2, 2])
     col_mask = np.array([0, 2, 1, 0, 2])
 
+    target = np.array(list("MSAMS"))
+
     total = 0
 
     # Slide the X-shaped mask over all positions in all rotations of the grid
@@ -60,7 +62,8 @@ def part2(grid):
                 i = row_mask + row_shift
                 j = col_mask + col_shift
 
-                total += "".join(rotation[i, j]).count("MSAMS")
+                if (rotation[i, j] == target).all():
+                    total += 1
 
     return total
 
