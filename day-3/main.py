@@ -11,7 +11,10 @@ with open("input", "r") as fobj:
 
 
 def mul_sum(string):
-    return sum(int(i) * int(j) for i, j in re.findall(r"mul\((\d+),(\d+)\)", string))
+    return sum(
+        int(i) * int(j)
+        for i, j in re.findall(r"mul\((\d+),(\d+)\)", string)
+    )
 
 
 print(mul_sum(text))
