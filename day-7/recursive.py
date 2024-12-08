@@ -14,11 +14,10 @@ def operate(current, values, operators):
 
 
 def is_possible(target, values, operators):
-    for result in operate(values[0], values[1:], operators):
-        if result == target:
-            return True
-    else:
-        return False
+    return any(
+        result == target
+        for result in operate(values[0], values[1:], operators)
+    )
 
 
 def solve(operators):
