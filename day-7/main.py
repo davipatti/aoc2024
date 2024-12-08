@@ -45,16 +45,10 @@ def solve(operators):
     )
 
 
-# %% part 1
-
-
-print(solve((mul, add)))
-
-# %% part 2
-
-
 def concat(a, b):
     return int(str(a) + str(b))
 
 
-print(solve((mul, add, concat)))
+if __name__ == "__main__":
+    print(solve((mul, add)))
+    print(solve((mul, add, concat)))
