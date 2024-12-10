@@ -25,7 +25,7 @@ def visit(i, j):
 
 # %% part 1
 
-sum(len(set(visit(i, j))) for i, j in np.argwhere(grid == 0))
+print(sum(len(set(visit(i, j))) for i, j in np.argwhere(grid == 0)))
 
 
 # %% part 2
