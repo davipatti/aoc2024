@@ -8,14 +8,14 @@ with open("input") as fobj:
 
 def rules(digits):
 
+    if digits == 0:
+        return (1,)
+
     as_str = str(digits)
 
     if (l := len(as_str)) % 2 == 0:
         i = l >> 1
         return int(as_str[:i]), int(as_str[i:])
-
-    elif digits == 0:
-        return (1,)
 
     else:
         return (digits * 2024,)
@@ -26,13 +26,13 @@ def rules(digits):
 
 def apply_rules(counts):
 
-    new_counts = Counter()
+    new = Counter()
 
     for digits, count in counts.items():
         for result in rules(digits):
-            new_counts[result] += count
+            new[result] += count
 
-    return new_counts
+    return new
 
 
 def apply_rules_n(counts, n):
